@@ -1,0 +1,12 @@
+
+<div class="image row col-md-12">
+<%= image_tag @post.photo.url() %>
+</div>
+<div class="row col-md-12">
+  <h2> <%= @post.title %> </h2>
+</div>
+<div class="row col-md-12 author">
+  Postado por: <strong> <%= @post.user.email %> </strong>
+</div>
+<%= link_to 'Voltar', posts_path %>
+<br/>
