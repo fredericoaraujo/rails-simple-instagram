@@ -18,17 +18,30 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <% if current_user %>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <%= link_to '<i class="far fa-address-book"></i> Nova Postagem'.html_safe, new_post_path, class: "nav-link" %>
           </li>
+          <li class="nav-item navbar-text my-2 my-lg-0">
+            <i class="far fa-user"></i><%= current_user.email %>
+          </li>
+          <li class="nav-item float-xs-right">
+            <%= link_to 'Sair <i class="fas fa-sign-out-alt"></i>'.html_safe, destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+
         </ul>
+        <% end %>
       </div>
     </nav>
     <div class="container">
       <div class="row col-md-12">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <% if notice %>
+        <div class="alert alter-info"><%= notice %></div>
+        <% end %>
+        <% if alert %>
+        <p class="alert alert-warning"><%= alert %></p>
+        <% end %>
       </div>
       <div class="row col-md-12">
         <%= yield %>
