@@ -1,6 +1,12 @@
 ---
 pt-BR:
   activerecord:
+    model:
+      post: Postagem
+    attributes:
+      post:
+        photo: Foto
+        title: Título
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

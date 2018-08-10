@@ -12,7 +12,7 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
-      <a class="navbar-brand" href="#">Instagram</a>
+      <%= link_to '<i class="fas fa-camera-retro"></i> Instagram'.html_safe, root_path, class: "navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to '<i class="far fa-address-book"></i> Novo Post'.html_safe, new_post_path, class: "nav-link" %>
+            <%= link_to '<i class="far fa-address-book"></i> Nova Postagem'.html_safe, new_post_path, class: "nav-link" %>
           </li>
         </ul>
       </div>
