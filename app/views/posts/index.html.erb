@@ -1,24 +1,19 @@
 <div class="row col-md-12">
-<h1>Posts</h1>
+<h1>Listagem</h1>
 </div>
-    <% @posts.each do |post| %>
+<div class="row">
+  <% @posts.each do |post| %>
     <div class="col-md-4">
-      <div class="image">
-        <%= image_tag post.photo.url(:thumb) %>
+      <div class="card">
+        <%= image_tag post.photo.url(:medium) %>
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text">Postado por: <strong> <%= post.user.email %> </strong></p>
+          <%= link_to '<i class="fas fa-eye"></i>'.html_safe, post, class: "btn btn-sm btn-primary" %>
+          <%= link_to '<i class="fas fa-trash"></i>'.html_safe, post, method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-sm btn-danger" %>
+        </div>
       </div>
-      <div class="title">
-        <h2> <%= post.title %> </h2>
-      </div>
-      <div class="author">
-        Postado por: <strong> <%= post.user.email %> </strong>
-      </div>
-        <%= link_to 'Show', post %>
-        <%= link_to 'Edit', edit_post_path(post) %>
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Você tem certeza?' } %>
-      </div>
-      </tr>
-    <% end %>
-
-<br>
-
+    </div>
+  <% end %>
+</div>
 

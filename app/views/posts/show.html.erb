@@ -8,5 +8,5 @@
 <div class="row col-md-12 author">
   Postado por: <strong> <%= @post.user.email %> </strong>
 </div>
-<%= link_to 'Voltar', posts_path %>
+<%= link_to '<i class="fas fa-arrow-left"></i> Voltar'.html_safe, posts_path, class: "btn btn-sm btn-primary" %>
 <br/>
